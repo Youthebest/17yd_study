@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登入</title>
+<script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+<style>
+* {
+	margin:0;
+	padding:0;
+}
+#wraper {
+	/* background-image:url("../images/image1.jpg");
+	*/
+    background-size:100%;
+	transition:all 2s;
+	/* 实现模糊效果 - 值越大越模糊 */
+    -webkit-filter:blur(10px);
+	/* Chrome,Opera */
+    -moz-filter:blur(10px);
+	-ms-filter:blur(10px);
+	filter:blur(10px);
+}
+.form {
+	position:absolute;
+	top:20%;
+	left:50%;
+	transform:translate(-50%);
+	width:30%;
+	min-width:240px;
+	/* border:1px solid #000;
+	*/
+    border-radius:10px;
+	box-sizing:border-box;
+	padding:20px 20px;
+	background-color:rgba(52,0,95,0.377);
+	box-shadow:1px 1px 1px 1px rgba(0,0,0,0.616);
+}
+.form label {
+	display:block;
+	width:30%;
+	min-width:100px;
+	float:left;
+	height:40px;
+	line-height:40px;
+	margin:10px 0;
+	font-size:18px;
+	color:#fff;
+}
+.form input {
+	width:70%;
+	min-width:200px;
+	box-sizing:border-box;
+	height:40px;
+	margin:10px 0;
+	background-color:#ffffff00;
+	border:1px solid #eee;
+	border-radius:20px;
+	outline:none;
+	padding:0 10px;
+	box-sizing:border-box;
+	font-size:18px;
+	color:#eee;
+}
+.form button {
+	width:70%;
+	height:40px;
+	background-color:rgba(255,255,255,0);
+	/* border:1px solid #fff;
+	*/
+    background-color:rgba(42,0,48,0.438);
+	border:none;
+	border-radius:20px;
+	color:#eee;
+	font-size:18px;
+	margin:10px 0 10px 30%;
+	outline:none;
+	cursor:pointer;
+}
+.form button:hover {
+	/* border:none;
+	*/
+    background-color:rgba(42,0,48,0.548);
+}
+</style>
+</head>
+<body>
+<div id="wraper"></div>
+
+<div class="form">
+    <label for="username">用户名</label>
+    <input id="username" type="text" value="输入用户名">
+
+    <label for="password">密码</label>
+    <input id="password" type="password" >
+
+    <label for="email">Email</label>
+    <input id="email" type="text" >
+
+    <label for="qq">QQ</label>
+    <input id="qq" type="text" >
+
+    <button>登入</button>
+</div>
+
+<script>
+$(function() {
+
+    // 拿到屏幕的宽高
+    // $(window).height()  //浏览器当前窗口可视区域高度
+    // $(document).height()    //浏览器当前窗口文档的高度
+    // $(document.body).height()   //浏览器当前窗口文档body的高度
+    // $(document.body).outerHeight(true)  //浏览器当前窗口文档body的总高度 包括border padding margin
+    var width = $(window).width();
+    var height = $(window).height();
+
+    // 切换的图片的数组
+    var arrImages = [
+        "http://www.jq22.com/img/cs/500x300-9.png ", "http://www.jq22.com/img/cs/500x300-8.png ", "http://www.jq22.com/img/cs/500x300-7.png ", "http://www.jq22.com/img/cs/500x300-6.png "
+    ];
+    var num = 0;
+    $("#wraper").css("backgroundImage", "url(" + arrImages[num] + ")")
+
+    // 设置 wraper的宽高
+    $("#wraper").css("width", width).css("height", height);
+
+    setInterval(change, 5000);
+
+    function change() {
+        num >= arrImages.length - 1 ? num = 0 : num++;
+
+        $("#wraper").css("backgroundImage", "url(" + arrImages[num] + ")")
+
+    }
+
+})
+</script>
+
+</body>
+</html>
