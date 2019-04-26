@@ -18,13 +18,17 @@
         #login input{
             width: 200px;
             margin-top:30px; 
-            border-radius:20px; 
+            /* border-radius:20px;  */
+            border-bottom:none; 
             border: solid 1px;
             height: 30px;
+        }
+        #login label{
             position: relative;
         }
         #login i{
             position: absolute;
+            top: 0;
         }
     </style>
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -37,11 +41,11 @@
         <form action="">
             <label>
                 <i class="fa fa-user"></i>
-                <input type="text">
+                <input type="text" class="text">
             </label>
             <label>
                 <i class="fa fa-key"></i>
-                <input type="password">
+                <input type="password" class="text">
             </label>
         </form>
     </div>
